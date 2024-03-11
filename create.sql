@@ -1,0 +1,48 @@
+#DROP DATABASE IF EXISTS lab_mysql;
+
+CREATE DATABASE IF NOT EXISTS lab_mysql;
+
+USE lab_mysql;
+
+CREATE TABLE IF NOT EXISTS Cars (
+    CarAutoID INT AUTO_INCREMENT PRIMARY KEY,
+    CarID INT,
+    VIN VARCHAR(17) NOT NULL,
+    Manufacturer VARCHAR(255) NOT NULL,
+    Model VARCHAR(255) NOT NULL,
+    Year INT NOT NULL,
+    Color VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerAutoID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerID INT,
+    Name VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+    Email VARCHAR(100),
+    Address VARCHAR(150) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    StateProvince VARCHAR(100) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    ZipPostalCode VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS Salespersons (
+    StaffAutoID INT AUTO_INCREMENT PRIMARY KEY,
+    StaffID INT,
+    Name VARCHAR(100) NOT NULL,
+    Store VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS Invoices (
+    InvoiceID INT AUTO_INCREMENT PRIMARY KEY,
+    InvoiceNumber VARCHAR(50) NOT NULL,
+    Date DATE NOT NULL,
+    CarID INT,
+    CustomerID INT,
+    StaffID INT
+);
+
